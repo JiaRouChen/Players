@@ -1,0 +1,270 @@
+:root {
+    --vol-thumb-appearance: none;
+    --vol-thumb-width: 25px;
+    --vol-thumb-height: 20px;
+    --vol-thumb-background-color: black;
+    --vol-thumb-border-radius: 5px;
+
+
+    --progress-appearance: none;
+    --progress-width: 5px;
+    --progress-height: 5px;
+    --progress-background-color: rgb(197, 7, 0);
+    --progress-border-radius: 50%;
+    --progress-transition: 0.5s;
+    --progress-hover-width: 15px;
+    --progress-hover-height: 15px;
+}
+
+
+
+#controlPanel {
+    width: 1000px;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    background-color: rgb(233, 237, 235);
+    align-items: center;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    text-align: center;
+    /* background-image: linear-gradient(to bottom, rgb(226, 223, 122), rgb(237, 244, 235), rgb(206, 224, 133)) */
+    background-image: linear-gradient(rgba(233, 234, 225, 0.3), rgba(236, 237, 233, 0.7)), url(item/tree.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#controlPanel>span {
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 2px 2px 3px black;
+    font-family: webdings;
+    font-size: 3rem;
+    border-radius: 50%;
+}
+
+#controlPanel>span:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 2px 2px 3px black;
+    font-family: webdings;
+    font-size: 4rem;
+    border-radius: 50%;
+}
+
+#volController {
+    cursor: pointer;
+}
+
+#volController>input[type="range"] {
+    appearance: none;
+    width: 85%;
+    height: 5px;
+    border: 1px solid gray;
+}
+
+#volController>input[type="range"]::-webkit-slider-thumb {
+    appearance: var(--vol-thumb-apperance);
+    background-color: var(--vol-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+}
+
+#volController>input[type="range"]::-moz-range-thumb {
+    appearance: var(--vol-thumb-apperance);
+    background-color: var(--vol-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+}
+
+#volController>input[type="button"] {
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0 0 1px black;
+}
+
+#volController>input[type="text"] {
+    width: 30px;
+    border: 0;
+    background-color: black;
+    color: rgb(185, 185, 70);
+    text-align: center;
+}
+
+#progressBar {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(236, 236, 234);
+    margin-bottom: 20PX;
+    text-align: center;
+}
+
+#progressBar::-webkit-slider-thumb {
+    appearance: var(--progress-appearance);
+    background-color: var(--progress-background-color);
+    width: var(--progress-width);
+    height: var(--progress-height);
+}
+
+#progressBar::-webkit-slider-thumb:hover {
+    width: var(--progress-hover-width);
+    height: var(--progress-hover-height);
+    border-radius: var(--progress-border-radius);
+    transition: var(--progress-transition);
+}
+
+#progressBar::-moz-range-thumb {
+    appearance: var(--progress-appearance);
+    background-color: var(--progress-background-color);
+    width: var(--progress-width);
+    height: var(--progress-height);
+}
+
+#progressBar::-moz-range-thumb:hover {
+    width: var(--progress-hover-width);
+    height: var(--progress-hover-height);
+    border-radius: var(--progress-border-radius);
+    transition: var(--progress-transition);
+}
+
+#info {
+    width: 1000px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    font-style: bold;
+    font-weight: 1000;
+}
+
+#musicPool {
+    width: 80%;
+    height: 50px;
+    font-weight: 1000;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    /* 垂直居中 */
+    font-size: 25px;
+    font-style: bold;
+    background-color: rgb(206, 217, 143);
+    border: 2px solid #333;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    background-image: linear-gradient(to right, rgb(206, 217, 143), rgb(139, 195, 74));
+}
+
+
+
+img {
+    display: block;
+    margin: 0 auto;
+
+
+    animation: scaleAnimation 0.3s infinite alternate;
+    /* 添加縮放動畫 */
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.3);
+    }
+}
+
+.btnBColor {
+    background-color: rgb(206, 217, 143);
+    color: brown;
+}
+
+#photo1 {
+    position: relative;
+    bottom: 0;
+    left: 45%;
+    margin: 10;
+}
+
+#book {
+    /*  border: 1px solid red;  */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-image: linear-gradient(rgba(233, 234, 225, 0.7), rgba(236, 237, 233, 0.7)), url(item/note.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+
+}
+
+#book>div {
+    border: 3px solid rgb(140, 140, 141);
+    height: 200px;
+    width: 400px;
+    overflow: auto;
+
+}
+
+#book>div>div {
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 0 3px gray;
+
+}
+
+/* .hide{
+    display: none !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+} */
+
+#book {
+    font-size: 33px;
+    font-style: bold;
+    font-weight: 1000;
+}
+
+#songList {
+    font-size: 25px;
+    font-style: bold;
+    border: none;
+    color: rgb(121, 171, 125);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 1000;
+}
+
+#songList:hover {
+    background-color: #466c48;
+    /* 深綠色 */
+    color: rgb(254, 254, 254);
+    font-weight: 1000;
+
+}
+
+#notice {
+    font-size: 33px;
+    font-style: bold;
+    color: rgb(3, 152, 28);
+    text-align: center;
+    font-weight: 1000;
+}
+

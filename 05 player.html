@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoe's player-5</title>
+    <link rel="stylesheet" href="splayer.css">
+</head>
+
+<body>
+
+    <audio id="audio"></audio>
+    <div id="controlPanel">
+        <select id="musicPool" onchange="changeMusic(0)">
+
+
+        </select>
+        <hr>
+        <span id="play" onclick="playMusic();">4</span>
+        <span onclick="stopMusic()" title="停止">&lt;</span>
+        <!--  <span onclick="pauseMusic()">;</span> -->
+        <span onclick="changeMusic(-1)" title="上一首">9</span>
+        <span onclick="changeTime(-5)"  title="快轉五秒">7</span>
+        <span onclick="changeTime(5)" title="倒轉五秒">8</span>
+        <span onclick="changeMusic(1)" title="下一首">:</span>
+        <span onclick="setMuted()" title="靜音">V</span>
+        <span onclick="setFuncBtnStatus()" title="單曲循環">q</span>
+        <span onclick="setFuncBtnStatus()" title="隨機播放">s</span>
+        <span onclick="setFuncBtnStatus()" title="全部循環">`</span>
+        <span onclick="showBook()" title="顯示我的歌本">@</span>
+        <hr>
+        <input type="range" id="progressBar" value="0" oninput="setProgress()">
+        <div id="volController">
+            <input type="range" value="100" oninput="setVolumeByRangBar()">
+            <input type="button" value="-" onclick="setVolumeByButton(-1)">
+            <input type="button" value="+" onclick="setVolumeByButton(1)">
+            <input type="text" value="100" readonly>
+        </div>
+        <div id="info">
+            <div>請按下播放鈕</div>
+            <div>00:00 / 00:00</div>
+            <div>正常</div>
+        </div>
+        <hr>
+        <div id="book" class="hide">
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div title="item/Space.mp3">Space</div>
+                <div title="item/Be-Still.mp3">Be-Still</div>
+                <div title="item/Cool-Down.mp3">Cool-Down</div>
+                <div title="item/dream.mp3">Dream</div>
+                <div title="item/faith.mp3">Faith</div>
+            </div>
+
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+            <button onclick="updateMusicPool()" title="新增至歌單" id="songList">更新歌單</button>
+            <span id="notice">請拖曳到右側</span>
+        </div>
+        <div id=photo1> <img id=photo2 src="item/logo.png" alt="職訓局標示" width="100px" height="100px"> </div>
+    </div>
+
+
+  <script src ="splayer.js"> </script>
+</body>
+
+</html>
